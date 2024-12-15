@@ -13,10 +13,10 @@ export default function Home() {
             return Alert.alert(`Já cadastrado`, `Esse participante já foi cadastrado`);
         }
         setParticipants([...participants, participantName]);
+        setParticipantName('');
     }
 
     function handleParticpantRemove(name: string) {
-        participants.filter(participants => participants !== name);
 
         Alert.alert(`Remover`, `Deseja remover o participante ${name}?`, [
             {
@@ -32,8 +32,8 @@ export default function Home() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.eventName}>React Native Workshop</Text>
-            <Text style={styles.eventDate}>12th October 2024</Text>
+            <Text style={styles.eventName}>Mangá Free</Text>
+            <Text style={styles.eventDate}>31th December 2024</Text>
             <View style={styles.form}>
                 <TextInput 
                     style={styles.input}
@@ -59,7 +59,7 @@ export default function Home() {
                 )}
                 showsVerticalScrollIndicator={false}
                 ListEmptyComponent={() => (
-                    <Text style={styles.listEmptyText}> NINGUÉM CADASTRADO</Text>
+                    <Text style={styles.listEmptyText}> Ninguém foi cadastrado ainda.</Text>
                 )}
             />
         </View>
